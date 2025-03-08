@@ -114,7 +114,8 @@ class PasswordManager:
         """Calculate password strength based on length and character diversity."""
         if len(password) < 8:
             return "Weak"
-        elif any(c.isdigit() for c in password) and any(c.isalpha() for c in password) and any(c in "!@#$%^&*()" for c in password):
+        elif any(c.isdigit() for c in password) and any(c.isalpha() for c in password) and any(
+                c in "!@#$%^&*()" for c in password):
             return "Strong"
         else:
             return "Medium"
@@ -185,6 +186,7 @@ class PasswordManager:
         self.website_entry.focus()
 
 
+# Main
 if __name__ == "__main__":
     root = tk.Tk()
     app = PasswordManager(root)
